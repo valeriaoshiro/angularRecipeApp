@@ -1,10 +1,19 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <span>Recipe App</span>
-    <a href=".">Recipes</a>
-    <a href=".">Shopping List</a>
+
+    <mat-icon>list_alt</mat-icon>
+    <a mat-button routerLink=".">Recipes</a>
+    <a mat-button routerLink=".">Shopping List</a>
+
     <span class="example-spacer"></span>
-    <a href=".">Save</a>
-    <a href=".">Fetch</a>
+
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item>Save data</button>
+      <button mat-menu-item>Fetch data</button>
+    </mat-menu>
+
   </mat-toolbar-row>
 </mat-toolbar>
